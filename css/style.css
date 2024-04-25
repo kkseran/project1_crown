@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Nanum Gothic Coding", "sans serif";
+  color: #333;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+#header {
+  width: 100%;
+  border-bottom: 1px solid #eee;
+}
+#header .inner {
+  width: 1180px;
+  height: 100px;
+  margin: 0px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 30px;
+}
+#header .inner #logo {
+  width: 200px;
+  height: 46px;
+}
+#header .inner .menuWeb {
+  width: 730px;
+}
+#header .inner .menuWeb > ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#header .inner .menuWeb > ul li {
+  width: 130px;
+  text-align: center;
+  position: relative;
+}
+#header .inner .menuWeb > ul li::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  background-color: #ff7f00;
+  position: absolute;
+  bottom: -1px;
+  transition: all 0.5s;
+}
+#header .inner .menuWeb > ul li:hover::after {
+  width: 100%;
+}
+#header .inner .menuWeb > ul a {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 100px;
+}
+
+/*# sourceMappingURL=style.css.map */
