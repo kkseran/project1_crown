@@ -1,5 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap');
-
 // common
+@import './common/font.scss';
 @import './common/reset.scss';
 @import './common/header.scss';
+@import './common/mixin.scss';
+
+// main
+@import './main/slide.scss';
+@import './main/products.scss';

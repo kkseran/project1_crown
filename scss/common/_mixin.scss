@@ -1,0 +1,8 @@
+@mixin moreBtn {
+	font-size: 30px;
+	color: #ff7f00;
+	transition: all 0.5s;
+	&:hover {
+		color: #9f1758;
+	}
+}

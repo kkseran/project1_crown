@@ -1,10 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+* {
+  color: #222;
+}
+
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-family: "Nanum Gothic Coding", "sans serif";
-  color: #333;
 }
 
 ul {
@@ -15,13 +17,31 @@ a {
   text-decoration: none;
 }
 
+body {
+  height: 9000px;
+}
+
 #header {
   width: 100%;
-  border-bottom: 1px solid #eee;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+}
+#header::after {
+  content: "";
+  display: none;
+  width: 100%;
+  height: 1px;
+  background-color: #eee;
+  position: absolute;
+  top: 80px;
+  left: 0px;
+  z-index: 10;
 }
 #header .inner {
   width: 1180px;
-  height: 100px;
+  height: 80px;
   margin: 0px auto;
   display: flex;
   align-items: center;
@@ -29,39 +49,283 @@ a {
   padding: 0px 30px;
 }
 #header .inner #logo {
-  width: 200px;
-  height: 46px;
+  width: 170px;
+  height: 39px;
+  z-index: 10;
 }
-#header .inner .menuWeb {
+#header .inner #menuWeb {
   width: 730px;
+  z-index: 10;
 }
-#header .inner .menuWeb > ul {
+#header .inner #menuWeb > ul {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
-#header .inner .menuWeb > ul li {
-  width: 130px;
+#header .inner #menuWeb > ul > li {
+  width: 150px;
+  height: 80px;
   text-align: center;
   position: relative;
 }
-#header .inner .menuWeb > ul li::after {
+#header .inner #menuWeb > ul > li::after {
   content: "";
   display: block;
   width: 0%;
   height: 2px;
   background-color: #ff7f00;
   position: absolute;
+  z-index: 5;
   bottom: -1px;
   transition: all 0.5s;
 }
-#header .inner .menuWeb > ul li:hover::after {
+#header .inner #menuWeb > ul > li:hover::after {
   width: 100%;
 }
-#header .inner .menuWeb > ul a {
+#header .inner #menuWeb > ul > li > a {
+  font: 600 16px/80px "Noto Sans Korean";
+  color: #fff;
+}
+#header .inner #menuWeb > ul > li .subWeb {
+  display: none;
+}
+#header .inner #menuWeb > ul > li .subWeb li {
+  width: 100%;
+  height: 60px;
+  text-align: center;
+}
+#header .inner #menuWeb > ul > li .subWeb li a {
+  font: normal 14px/60px "Noto Sans Korean";
+  position: relative;
+}
+#header .inner #menuWeb > ul > li .subWeb li a::before {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: #ff7f00;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.5s;
+  transform: scale(0);
+  position: absolute;
+  right: -15px;
+  top: -5px;
+  z-index: 10;
+}
+#header .inner #menuWeb > ul > li .subWeb li a:hover {
+  color: #9f1758;
+}
+#header .inner #menuWeb > ul > li .subWeb li a:hover::before {
+  content: "";
+  opacity: 1;
+  transform: scale(1);
+}
+#header .btnCall {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  color: #333;
+  transform: translateY(-50%);
+  font-size: 40px;
+  display: none;
+}
+#header #menuMo {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  display: none;
+}
+#header #menuMo > ul {
+  width: 100%;
+  position: absolute;
+  top: 80px;
+  left: 0px;
+  padding: 10px 0px;
+}
+#header #menuMo > ul > li {
+  width: 100%;
+  position: relative;
+}
+#header #menuMo > ul > li > a {
+  font: bold 3vw/4.5vh "Noto Sans Korean";
+  padding: 0px 0px 0px 30px;
+}
+#header #menuMo > ul > li > a.btnDown {
+  position: absolute;
+  top: 0px;
+  right: 40px;
+  padding: 0px;
+  transition: all 1s;
+}
+#header #menuMo > ul > li > a.btnDown i {
+  font-size: 3.5vw;
+  color: #9f1758;
+  background-color: #fff;
+}
+#header #menuMo > ul > li > a.btnDown.active {
+  transform: rotate(180deg);
+}
+#header #menuMo > ul > li .subMo {
+  width: 100%;
+  height: 0px;
+  overflow: hidden;
+  background-color: #fefefe;
+  transform: translateY(-50%);
+  transition: all 1s;
+  opacity: 0;
+}
+#header #menuMo > ul > li .subMo li {
+  text-indent: 40px;
+  padding: 12px 0px;
+}
+#header #menuMo > ul > li .subMo li a {
+  font: normal 2.5vw/1 "Noto Sans Korean";
+}
+#header #menuMo > ul > li .subMo.active {
+  height: 100%;
+  transform: translateY(0);
+  opacity: 1;
+}
+#header #menuMo .close {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  font-size: 50px;
+  color: #333;
+}
+#header #gnbBg {
+  width: 100%;
+  height: 0px;
+  background-color: #fff;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 0;
+  z-index: 9;
+}
+#header #gnbBg::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #eee;
+  position: absolute;
+  top: 80px;
+  left: 0px;
+  z-index: 10;
+}
+
+@media screen and (max-width: 800px) {
+  #header .inner {
+    width: 100%;
+  }
+  #header .inner #menuWeb {
+    display: none;
+  }
+  #header .btnCall {
+    display: block;
+  }
+  #header #menuMo {
+    display: block;
+  }
+}
+#slide {
+  width: 100%;
+  height: 100vh;
+}
+#slide .swiper {
+  width: 100%;
+  height: 100%;
+}
+#slide .swiper .swiper-wrapper .swiper-slide h2 {
+  width: 60vw;
+  font: 900 6vh/1.5 "Noto Sans Korean";
+  text-align: center;
+  letter-spacing: 1px;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#slide .swiper .swiper-wrapper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#slide .swiper .swiper-pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+  opacity: 0.7;
+  margin: 0px 10px;
+}
+#slide .swiper .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  width: 12px;
+  height: 12px;
+  background-color: #ff7f00;
+  opacity: 0.9;
+}
+#slide .swiper .autoplay-progress {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: bold;
-  font-size: 20px;
-  line-height: 100px;
+}
+#slide .swiper .autoplay-progress svg {
+  --progress: 0;
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  stroke-width: 4px;
+  stroke: #ff7f00;
+  fill: none;
+  stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
+  stroke-dasharray: 125.6;
+  transform: rotate(-90deg);
+}
+#slide .swiper .autoplay-progress span {
+  font: normal 15px/1px "Noto Sans Korean";
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+#products {
+  width: 100%;
+  min-height: 900px;
+}
+#products .inner {
+  width: 1180px;
+  margin: 0px auto;
+  position: relative;
+}
+#products .inner .moreBtn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+#products .inner .moreBtn i {
+  font-size: 30px;
+  color: #ff7f00;
+  transition: all 0.5s;
+}
+#products .inner .moreBtn i:hover {
+  color: #9f1758;
+}
+#products .inner .productsContent {
+  width: 100%;
+  background-color: #eee;
 }
 
 /*# sourceMappingURL=style.css.map */

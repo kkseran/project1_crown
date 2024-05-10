@@ -1,0 +1,21 @@
+#products {
+	width: 100%;
+	min-height: 900px;
+	.inner {
+		width: 1180px;
+		margin: 0px auto;
+		position: relative;
+		.moreBtn {
+			position: absolute;
+			top: 30px;
+			right: 30px;
+			i {
+				@include moreBtn;
+			}
+		}
+		.productsContent {
+			width: 100%;
+			background-color: #eee;
+		}
+	}
+}
