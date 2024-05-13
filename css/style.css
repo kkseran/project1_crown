@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
 * {
   color: #222;
@@ -331,17 +332,58 @@ body {
   width: 100%;
   text-align: center;
   position: absolute;
-  top: 25%;
+  top: 15%;
   left: 0px;
+}
+#products .inner .productsContent .productsText .text1 {
+  font: bold 38px/1 "Noto Sans Korean";
+  margin-bottom: 40px;
+}
+#products .inner .productsContent .productsText .text2 {
+  font: normal 22px/1 "Noto Sans Korean";
+  margin-bottom: 20px;
+}
+#products .inner .productsContent .productsText .text3 {
+  font: normal 16px/1.3 "Noto Sans Korean";
 }
 #products .inner .productsContent .productImg {
   width: 100%;
   height: 100%;
-  background-color: #aaa;
   position: absolute;
   top: 0px;
   left: 0px;
   z-index: -1;
+}
+#products .inner .productsContent .productImg .productBg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 0;
+  transition: all 0.5s;
+}
+#products .inner .productsContent .productImg .productBg:nth-of-type(1) {
+  background: url(/img/main/products/bg.on_test.png) center no-repeat;
+}
+#products .inner .productsContent .productImg .productBg:nth-of-type(2) {
+  background: url(/img/main/products/하임_bg_test.png);
+}
+#products .inner .productsContent .productImg .productBg:nth-of-type(3) {
+  background: #eee;
+}
+#products .inner .productsContent .productImg .productBg:nth-of-type(4) {
+  background: #ccc;
+}
+#products .inner .productsContent .productImg .productBg:nth-of-type(5) {
+  background: #aaa;
+}
+#products .inner .productsContent .productImg .productBg:nth-of-type(6) {
+  background: #888;
+}
+#products .inner .productsContent .productImg .productBg.on {
+  opacity: 1;
+  z-index: 10;
 }
 #products .inner .productsContent .productMenu {
   width: 100%;
@@ -352,31 +394,56 @@ body {
 }
 #products .inner .productsContent .productMenu .contentBox {
   flex: 1;
-  margin: 0px 20px;
+  margin: 0px 10px;
   padding: 10px;
   background-color: #fff;
   border-radius: 10px;
   text-align: center;
-  transition: all 0.5s;
+  transition: all 1s;
+  cursor: pointer;
 }
 #products .inner .productsContent .productMenu .contentBox .imgBox {
   width: 100%;
   height: 160px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
+  position: relative;
+  transition: all 0.5s;
+}
+#products .inner .productsContent .productMenu .contentBox .imgBox.on {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 0;
+  transition: all 1s;
 }
 #products .inner .productsContent .productMenu .contentBox .title {
   font: bold 20px/1 "Noto Sans Korean";
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 #products .inner .productsContent .productMenu .contentBox .txt {
   font: normal 14px/1 "Noto Sans Korean";
   margin-bottom: 10px;
 }
 #products .inner .productsContent .productMenu .contentBox .infoTxt {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  font: normal 10px/1.5 "Noto Sans Korean";
   display: none;
 }
-#products .inner .productsContent .productMenu .contentBox:hover {
+#products .inner .productsContent .productMenu .contentBox.on {
   transform: scale(1.2);
+}
+#products .inner .productsContent .productMenu .contentBox.on .imgBox {
+  opacity: 0;
+}
+#products .inner .productsContent .productMenu .contentBox.on .imgBox.on {
+  opacity: 1;
+}
+#products .inner .productsContent .productMenu .contentBox.on .infoTxt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=style.css.map */

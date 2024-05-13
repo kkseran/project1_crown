@@ -45,3 +45,24 @@ var swiper = new Swiper('.mySwiper', {
 		},
 	},
 });
+
+// #products
+$('.contentBox').mouseenter(function () {
+	$(this).addClass('on');
+});
+$('.contentBox').mouseleave(function () {
+	$(this).removeClass('on');
+});
+
+let contentBox = document.querySelectorAll('.contentBox');
+console.log(contentBox.length);
+for (let i = 0; i < contentBox.length; i++) {
+	contentBox[i].addEventListener('click', (e) => {
+		for (let j = 0; j < contentBox.length; j++) {
+			contentBox[j].className = 'contentBox';
+		}
+		contentBox[i].className = 'contentBox on';
+		let bg = document.querySelectorAll('.productBg');
+		bg[i + 1].classList.add('on');
+	});
+}
