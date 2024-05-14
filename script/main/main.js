@@ -1,16 +1,26 @@
 // #header
 $('#menuWeb').hover(
 	function () {
-		$(this).find('.subWeb').stop().slideDown();
+		$(this).find('.subWeb').stop().css('opacity', '1').slideDown();
 		$('#gnbBg').stop().css('opacity', '1').animate({ height: '340px' });
-		$('#menuWeb>ul>li>a').css('color', '#222');
+		$('#header').addClass('scroll');
 	},
 	function () {
-		$(this).find('.subWeb').stop().slideUp();
+		$(this).find('.subWeb').stop().css('opacity', '0').slideUp();
 		$('#gnbBg').stop().css('opacity', '0').animate({ height: '0px' });
-		$('#menuWeb>ul>li>a').css('color', '#fff');
+		$('#header').removeClass('scroll');
 	}
 );
+
+let offset = $('#header').offset();
+$(window).scroll(function () {
+	if ($(document).scrollTop() > offset.top) {
+		$('#header').addClass('scroll');
+	} else {
+		$('#header').removeClass('scroll');
+	}
+});
+
 $('.btnDown').click(function () {
 	$(this).toggleClass('active');
 	$('.subMo').toggleClass('active');
@@ -47,14 +57,22 @@ var swiper = new Swiper('.mySwiper', {
 });
 
 // #products
-$('.contentBox').mouseenter(function () {
-	$(this).addClass('on');
-});
-$('.contentBox').mouseleave(function () {
-	$(this).removeClass('on');
+// $('.contentBox').mouseenter(function () {
+// 	$(this).addClass('on');
+// });
+// $('.contentBox').mouseleave(function () {
+// 	$(this).removeClass('on');
+// });
+
+$('.contentBox').click(function () {
+	if ($('.productBg').hasClass('on')) {
+		$('.productBg').removeClass('on');
+	}
 });
 
 let contentBox = document.querySelectorAll('.contentBox');
+let bg = document.querySelectorAll('.productBg');
+let productsTexts = document.querySelector('.productsTexts');
 console.log(contentBox.length);
 for (let i = 0; i < contentBox.length; i++) {
 	contentBox[i].addEventListener('click', (e) => {
@@ -62,7 +80,18 @@ for (let i = 0; i < contentBox.length; i++) {
 			contentBox[j].className = 'contentBox';
 		}
 		contentBox[i].className = 'contentBox on';
-		let bg = document.querySelectorAll('.productBg');
+		// contentBox[i].classList.toggle('on');
+		// if (bg.classList.contains('on')) {
+		// 	bg.classList.remove('on');
+		// }
 		bg[i + 1].classList.add('on');
+
+		let productsTitle = e.currentTarget.querySelector('.contentTitle').innerText;
+		let productsTxt = e.currentTarget.querySelector('.contentTxt').innerText;
+		let productsInfoTxt = e.currentTarget.querySelector('.contentInfoTxt').innerText;
+
+		productsTexts.querySelector('.productsTitle').innerText = productsTitle;
+		productsTexts.querySelector('.productsTxt').innerText = productsTxt;
+		productsTexts.querySelector('.productsInfoTxt').innerText = productsInfoTxt;
 	});
 }
