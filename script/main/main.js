@@ -1,12 +1,12 @@
 // #header
 $('#menuWeb').hover(
 	function () {
-		$(this).find('.subWeb').stop().css('opacity', '1').slideDown();
+		$(this).find('.subWeb').stop().slideDown();
 		$('#gnbBg').stop().css('opacity', '1').animate({ height: '340px' });
 		$('#header').addClass('scroll');
 	},
 	function () {
-		$(this).find('.subWeb').stop().css('opacity', '0').slideUp();
+		$(this).find('.subWeb').stop().slideUp();
 		$('#gnbBg').stop().css('opacity', '0').animate({ height: '0px' });
 		$('#header').removeClass('scroll');
 	}
@@ -40,7 +40,7 @@ var swiper = new Swiper('.mySwiper', {
 	},
 	pagination: {
 		el: '.swiper-pagination',
-		clickable: false,
+		clickable: true,
 	},
 	loop: true,
 	speed: 1000,

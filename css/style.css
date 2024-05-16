@@ -193,7 +193,7 @@ body {
   height: 0px;
   background-color: #fff;
   position: absolute;
-  top: 0px;
+  top: 80px;
   left: 0px;
   opacity: 0;
   z-index: 9;
@@ -206,7 +206,7 @@ body {
   height: 1px;
   background-color: #eee;
   position: absolute;
-  top: 80px;
+  top: 0px;
   left: 0px;
   z-index: 10;
 }
@@ -233,22 +233,21 @@ body {
 }
 #slide {
   width: 100%;
-  height: 100vh;
+  height: 90vh;
 }
 #slide .swiper {
   width: 100%;
   height: 100%;
 }
 #slide .swiper .swiper-wrapper .swiper-slide h2 {
-  width: 60vw;
-  font: 900 6vh/1.5 "Noto Sans Korean";
-  text-align: center;
+  width: 1180px;
+  font: 900 60px/1.5 "Noto Sans Korean";
   letter-spacing: 1px;
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
   color: #fff;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 60%;
   transform: translate(-50%, -50%);
 }
 #slide .swiper .swiper-wrapper .swiper-slide img {

@@ -86,23 +86,6 @@ body {
 										transform: scale(1);
 									}
 								}
-								// &::after {
-								// 	content: '';
-								// 	display: block;
-								// 	width: 0%;
-								// 	height: 1px;
-								// 	background-color: #9f1758;
-								// 	position: absolute;
-								// 	left: 0;
-								// 	bottom: -4px;
-								// 	transition: all 1s;
-								// }
-								// &:hover {
-								// 	color: #9f1758;
-								// 	&::after {
-								// 		width: 100%;
-								// 	}
-								// }
 							}
 						}
 					}
@@ -192,7 +175,7 @@ body {
 		height: 0px;
 		background-color: #fff;
 		position: absolute;
-		top: 0px;
+		top: 80px;
 		left: 0px;
 		opacity: 0;
 		z-index: 9;
@@ -204,7 +187,7 @@ body {
 			height: 1px;
 			background-color: #eee;
 			position: absolute;
-			top: 80px;
+			top: 0px;
 			left: 0px;
 			z-index: 10;
 		}
