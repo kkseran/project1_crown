@@ -1,10 +1,10 @@
 #products {
 	width: 100%;
-	min-height: 800px;
 	.inner {
 		width: 1180px;
 		margin: 0px auto;
 		position: relative;
+		overflow: hidden;
 		.moreBtn {
 			position: absolute;
 			top: 30px;
@@ -13,24 +13,41 @@
 				@include moreBtn;
 			}
 		}
+		.figureBg {
+			width: 900px;
+			height: 700px;
+			background-color: rgba($color: #9f1758, $alpha: 1);
+			border-radius: 70px;
+			opacity: 1;
+			position: absolute;
+			top: -140px;
+			left: -350px;
+			transform: rotate(35deg);
+			z-index: -2;
+		}
 		.productsContent {
 			width: 100%;
-			min-height: 800px;
+			min-height: 750px;
 			.productsTexts {
 				width: 100%;
-				text-align: center;
 				position: absolute;
-				top: 20%;
-				left: 0px;
+				top: 100px;
+				left: 60px;
 				.productsTitle {
-					font: bold 40px/1 $mainFont;
+					font: 700 40px/1.2 $mainFont;
+					color: #fff;
+					text-shadow: 2px 1px 1px rgba(0, 0, 0, 0.2);
 					margin-bottom: 30px;
 				}
 				.productsTxt {
 					font: normal 30px/1 $mainFont;
+					text-shadow: 2px 1px 1px rgba(0, 0, 0, 0.2);
+					color: #fff;
 				}
 				.productsInfoTxt {
 					font: normal 20px/1.5 $mainFont;
+					text-shadow: 2px 1px 1px rgba(0, 0, 0, 0.2);
+					color: #fff;
 					margin-top: -10px;
 				}
 			}
@@ -50,10 +67,15 @@
 					opacity: 0;
 					transition: all 0.5s;
 					&:nth-of-type(1) {
-						background: url(/img/main/products/bg.on_test.png) center no-repeat;
+						// background-color: #888;
+						background-image: url(/img/main/products/bg/bg.on.png);
+						background-repeat: no-repeat;
+						background-position: 200px 90px;
 					}
 					&:nth-of-type(2) {
-						background: url(/img/main/products/하임_bg_test.png);
+						background-image: url(/img/main/products/bg/하임_bg.png);
+						background-repeat: no-repeat;
+						background-position: 200px 100px;
 					}
 					&:nth-of-type(3) {
 						background: #eee;
@@ -68,7 +90,7 @@
 						background: #888;
 					}
 					&.on {
-						opacity: 0.5;
+						opacity: 0.6;
 						z-index: 10;
 					}
 				}
@@ -84,7 +106,7 @@
 					margin: 0px 10px;
 					padding: 10px;
 					background-color: #fff;
-					opacity: 0.8;
+					opacity: 0.9;
 					border: 1px solid transparent;
 					border-radius: 10px;
 					text-align: center;
@@ -120,7 +142,7 @@
 					&.on {
 						transform: scale(1.2);
 						opacity: 1;
-						border: 1px solid rgba($color: #9f1758, $alpha: 0.3);
+						border: 1px solid rgba($color: #ff7f00, $alpha: 0.4);
 						z-index: 10;
 						.imgBox {
 							opacity: 0;

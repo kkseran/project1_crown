@@ -2,7 +2,7 @@
 $('#menuWeb').hover(
 	function () {
 		$(this).find('.subWeb').stop().slideDown();
-		$('#gnbBg').stop().css('opacity', '1').animate({ height: '340px' });
+		$('#gnbBg').stop().css('opacity', '1').animate({ height: '250px' });
 		$('#header').addClass('scroll');
 	},
 	function () {
@@ -73,7 +73,9 @@ $('.contentBox').click(function () {
 let contentBox = document.querySelectorAll('.contentBox');
 let bg = document.querySelectorAll('.productBg');
 let productsTexts = document.querySelector('.productsTexts');
-console.log(contentBox.length);
+let contentBoxOn = document.querySelectorAll('.contentBox.on');
+console.log(contentBoxOn);
+
 for (let i = 0; i < contentBox.length; i++) {
 	contentBox[i].addEventListener('click', (e) => {
 		for (let j = 0; j < contentBox.length; j++) {
