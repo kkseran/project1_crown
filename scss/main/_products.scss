@@ -78,10 +78,14 @@
 						background-position: 200px 100px;
 					}
 					&:nth-of-type(3) {
-						background: #eee;
+						background-image: url(/img/main/products/bg/크라운산도_bg.png);
+						background-repeat: no-repeat;
+						background-position: 130px 70px;
 					}
 					&:nth-of-type(4) {
-						background: #ccc;
+						background-image: url(/img/main/products/bg/빅파이_bg.png);
+						background-repeat: no-repeat;
+						background-position: 180px 80px;
 					}
 					&:nth-of-type(5) {
 						background: #aaa;
@@ -142,7 +146,7 @@
 					&.on {
 						transform: scale(1.2);
 						opacity: 1;
-						border: 1px solid rgba($color: #ff7f00, $alpha: 0.4);
+						border: 1px solid rgba($color: #ff7f00, $alpha: 0.6);
 						z-index: 10;
 						.imgBox {
 							opacity: 0;

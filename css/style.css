@@ -247,7 +247,7 @@ body {
   color: #fff;
   position: absolute;
   top: 50%;
-  left: 60%;
+  left: 70%;
   transform: translate(-50%, -50%);
 }
 #slide .swiper .swiper-wrapper .swiper-slide img {
@@ -388,10 +388,14 @@ body {
   background-position: 200px 100px;
 }
 #products .inner .productsContent .productImg .productBg:nth-of-type(3) {
-  background: #eee;
+  background-image: url(/img/main/products/bg/크라운산도_bg.png);
+  background-repeat: no-repeat;
+  background-position: 130px 70px;
 }
 #products .inner .productsContent .productImg .productBg:nth-of-type(4) {
-  background: #ccc;
+  background-image: url(/img/main/products/bg/빅파이_bg.png);
+  background-repeat: no-repeat;
+  background-position: 180px 80px;
 }
 #products .inner .productsContent .productImg .productBg:nth-of-type(5) {
   background: #aaa;
@@ -451,7 +455,7 @@ body {
 #products .inner .productsContent .productMenu .contentBox:hover, #products .inner .productsContent .productMenu .contentBox.on {
   transform: scale(1.2);
   opacity: 1;
-  border: 1px solid rgba(255, 127, 0, 0.4);
+  border: 1px solid rgba(255, 127, 0, 0.6);
   z-index: 10;
 }
 #products .inner .productsContent .productMenu .contentBox:hover .imgBox, #products .inner .productsContent .productMenu .contentBox.on .imgBox {
