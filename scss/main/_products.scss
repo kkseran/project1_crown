@@ -68,30 +68,34 @@
 					transition: all 0.5s;
 					&:nth-of-type(1) {
 						// background-color: #888;
-						background-image: url(/img/main/products/bg/bg.on.png);
+						background-image: url(../img/main/products/bg/bg.on.png);
 						background-repeat: no-repeat;
-						background-position: 200px 90px;
+						background-position: 200px 80px;
 					}
 					&:nth-of-type(2) {
-						background-image: url(/img/main/products/bg/하임_bg.png);
+						background-image: url(../img/main/products/bg/하임_bg.png);
 						background-repeat: no-repeat;
 						background-position: 200px 100px;
 					}
 					&:nth-of-type(3) {
-						background-image: url(/img/main/products/bg/크라운산도_bg.png);
+						background-image: url(../img/main/products/bg/크라운산도_bg.png);
 						background-repeat: no-repeat;
 						background-position: 130px 70px;
 					}
 					&:nth-of-type(4) {
-						background-image: url(/img/main/products/bg/빅파이_bg.png);
+						background-image: url(../img/main/products/bg/빅파이_bg.png);
 						background-repeat: no-repeat;
-						background-position: 180px 80px;
+						background-position: 200px 70px;
 					}
 					&:nth-of-type(5) {
-						background: #aaa;
+						background-image: url(../img/main/products/bg/콘칲_bg.png);
+						background-repeat: no-repeat;
+						background-position: 210px 50px;
 					}
 					&:nth-of-type(6) {
-						background: #888;
+						background-image: url(../img/main/products/bg/밤양갱_bg.png);
+						background-repeat: no-repeat;
+						background-position: 250px 50px;
 					}
 					&.on {
 						opacity: 0.6;

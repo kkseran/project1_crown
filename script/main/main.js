@@ -40,7 +40,7 @@ var swiper = new Swiper('.mySwiper', {
 	},
 	pagination: {
 		el: '.swiper-pagination',
-		clickable: true,
+		clickable: false,
 	},
 	loop: true,
 	speed: 1000,
