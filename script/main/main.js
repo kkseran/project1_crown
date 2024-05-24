@@ -30,7 +30,7 @@ $('.btnDown').click(function () {
 // Initialize Swiper
 const progressCircle = document.querySelector('.autoplay-progress svg');
 const progressContent = document.querySelector('.autoplay-progress span');
-var swiper = new Swiper('.mySwiper', {
+var swiper = new Swiper('.mainSlide', {
 	spaceBetween: 30,
 	effect: 'fade',
 	centeredSlides: true,
@@ -57,12 +57,6 @@ var swiper = new Swiper('.mySwiper', {
 });
 
 // #products
-// $('.contentBox').mouseenter(function () {
-// 	$(this).addClass('on');
-// });
-// $('.contentBox').mouseleave(function () {
-// 	$(this).removeClass('on');
-// });
 
 $('.contentBox').click(function () {
 	if ($('.productBg').hasClass('on')) {
@@ -97,3 +91,27 @@ for (let i = 0; i < contentBox.length; i++) {
 		productsTexts.querySelector('.productsInfoTxt').innerText = productsInfoTxt;
 	});
 }
+
+// #social
+// tab
+$('.socialTab>.titList>li>a')
+	.click(function (event) {
+		event.preventDefault();
+		$(this.hash).siblings().hide().end().show(0);
+		$('.socialTab>.titList>li>a').click(function () {
+			$(this).addClass('on');
+		});
+		$('.socialTab>.titList>li>a').removeClass('on');
+	})
+	.filter(':eq(0)')
+	.click()
+	.addClass('on');
+// Initialize Swiper
+var swiper = new Swiper('.socialSlide', {
+	slidesPerView: 3,
+	spaceBetween: 30,
+	pagination: {
+		el: '.swiper-pagination',
+		clickable: true,
+	},
+});

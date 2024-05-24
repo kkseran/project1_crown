@@ -237,11 +237,11 @@ body {
   width: 100%;
   height: 90vh;
 }
-#slide .swiper {
+#slide .mainSlide {
   width: 100%;
   height: 100%;
 }
-#slide .swiper .swiper-wrapper .swiper-slide .textWrap {
+#slide .mainSlide .swiper-wrapper .swiper-slide .textWrap {
   width: 1180px;
   height: 100%;
   margin: 0px auto;
@@ -249,7 +249,7 @@ body {
   left: 0;
   right: 0;
 }
-#slide .swiper .swiper-wrapper .swiper-slide .textWrap h2 {
+#slide .mainSlide .swiper-wrapper .swiper-slide .textWrap h2 {
   width: 100%;
   font: 900 65px/1.5 "Noto Sans KR";
   letter-spacing: 1px;
@@ -260,25 +260,25 @@ body {
   left: 60px;
   transform: translateY(-50%);
 }
-#slide .swiper .swiper-wrapper .swiper-slide img {
+#slide .mainSlide .swiper-wrapper .swiper-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-#slide .swiper .swiper-pagination .swiper-pagination-bullet {
+#slide .mainSlide .swiper-pagination .swiper-pagination-bullet {
   width: 8px;
   height: 8px;
   background-color: #fff;
   opacity: 0.7;
   margin: 0px 10px;
 }
-#slide .swiper .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+#slide .mainSlide .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
   width: 13px;
   height: 13px;
   background-color: #ff7f00;
   opacity: 0.9;
 }
-#slide .swiper .autoplay-progress {
+#slide .mainSlide .autoplay-progress {
   position: absolute;
   right: 10px;
   bottom: 10px;
@@ -290,7 +290,7 @@ body {
   justify-content: center;
   font-weight: bold;
 }
-#slide .swiper .autoplay-progress svg {
+#slide .mainSlide .autoplay-progress svg {
   --progress: 0;
   position: absolute;
   z-index: 10;
@@ -303,7 +303,7 @@ body {
   stroke-dasharray: 125.6;
   transform: rotate(-90deg);
 }
-#slide .swiper .autoplay-progress span {
+#slide .mainSlide .autoplay-progress span {
   font: normal 15px/1px "Noto Sans KR";
   color: #fff;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
@@ -311,6 +311,7 @@ body {
 
 #products {
   width: 100%;
+  margin-bottom: 20px;
 }
 #products .inner {
   width: 1180px;
@@ -350,7 +351,7 @@ body {
 #products .inner .productsContent .productsTexts {
   width: 100%;
   position: absolute;
-  top: 100px;
+  top: 150px;
   left: 60px;
 }
 #products .inner .productsContent .productsTexts .productsTitle {
@@ -390,93 +391,245 @@ body {
 #products .inner .productsContent .productImg .productBg:nth-of-type(1) {
   background-image: url(../img/main/products/bg/bg.on.png);
   background-repeat: no-repeat;
-  background-position: 200px 80px;
+  background-position: 270px -35px;
 }
 #products .inner .productsContent .productImg .productBg:nth-of-type(2) {
   background-image: url(../img/main/products/bg/하임_bg.png);
   background-repeat: no-repeat;
-  background-position: 200px 100px;
+  background-position: 240px 20px;
 }
 #products .inner .productsContent .productImg .productBg:nth-of-type(3) {
   background-image: url(../img/main/products/bg/크라운산도_bg.png);
   background-repeat: no-repeat;
-  background-position: 130px 70px;
+  background-position: 180px -10px;
 }
 #products .inner .productsContent .productImg .productBg:nth-of-type(4) {
   background-image: url(../img/main/products/bg/빅파이_bg.png);
   background-repeat: no-repeat;
-  background-position: 200px 70px;
+  background-position: 200px 20px;
 }
 #products .inner .productsContent .productImg .productBg:nth-of-type(5) {
   background-image: url(../img/main/products/bg/콘칲_bg.png);
   background-repeat: no-repeat;
-  background-position: 210px 50px;
+  background-position: 240px -20px;
 }
 #products .inner .productsContent .productImg .productBg:nth-of-type(6) {
   background-image: url(../img/main/products/bg/밤양갱_bg.png);
   background-repeat: no-repeat;
-  background-position: 250px 50px;
+  background-position: 260px -10px;
 }
 #products .inner .productsContent .productImg .productBg.on {
-  opacity: 0.6;
+  opacity: 0.8;
   z-index: 10;
 }
 #products .inner .productsContent .productMenu {
   width: 100%;
   display: flex;
   position: absolute;
-  bottom: 10%;
+  bottom: 10px;
   left: 0px;
 }
 #products .inner .productsContent .productMenu .contentBox {
   flex: 1;
   margin: 0px 10px;
-  padding: 10px;
   background-color: #fff;
-  opacity: 0.9;
   border: 1px solid transparent;
   border-radius: 10px;
   text-align: center;
   transition: all 0.8s;
   box-shadow: 2px 3px 2px 0px rgba(0, 0, 0, 0.1);
+  opacity: 0.9;
   cursor: pointer;
 }
 #products .inner .productsContent .productMenu .contentBox .imgBox {
   width: 100%;
-  height: 160px;
-  margin-bottom: 5px;
-  position: relative;
-  transition: all 0.8s;
+  height: 150px;
+  padding: 10px;
 }
-#products .inner .productsContent .productMenu .contentBox .imgBox.on {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  opacity: 0;
-  transition: all 0.8s;
+#products .inner .productsContent .productMenu .contentBox .imgBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
 }
 #products .inner .productsContent .productMenu .contentBox .contentTitle {
-  font: bold 20px/1 "Noto Sans KR";
-  margin-bottom: 20px;
+  display: none;
 }
 #products .inner .productsContent .productMenu .contentBox .contentTxt {
-  font: normal 14px/1 "Noto Sans KR";
-  margin-bottom: 10px;
+  display: none;
 }
 #products .inner .productsContent .productMenu .contentBox .contentInfoTxt {
   display: none;
 }
 #products .inner .productsContent .productMenu .contentBox:hover, #products .inner .productsContent .productMenu .contentBox.on {
-  transform: scale(1.2);
+  box-shadow: 4px 4px 5px 0px rgba(255, 178, 101, 0.3);
+  transform: translateY(-30px);
   opacity: 1;
-  border: 1px solid rgba(255, 127, 0, 0.6);
   z-index: 10;
 }
-#products .inner .productsContent .productMenu .contentBox:hover .imgBox, #products .inner .productsContent .productMenu .contentBox.on .imgBox {
-  opacity: 0;
+
+.socialSlide {
+  width: 100%;
+  height: 100%;
 }
-#products .inner .productsContent .productMenu .contentBox:hover .imgBox.on, #products .inner .productsContent .productMenu .contentBox.on .imgBox.on {
+.socialSlide .swiper-wrapper .swiper-slide {
+  width: 500px;
+  height: 600px;
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.socialSlide .swiper-wrapper .swiper-slide .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#con02 {
+  background-color: lightblue;
+}
+
+#con03 {
+  background-color: lemonchiffon;
+}
+
+#social {
+  width: 100%;
+}
+#social .inner {
+  width: 1180px;
+  margin: 0px auto;
+  position: relative;
+}
+#social .inner .moreBtn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+#social .inner .moreBtn i {
+  font-size: 30px;
+  color: #ff7f00;
+  transition: all 0.5s;
+}
+#social .inner .moreBtn i:hover {
+  color: #9f1758;
+}
+#social .inner .socialTexts {
+  width: 100%;
+  padding: 50px 30px 30px;
+}
+#social .inner .socialTexts h2 {
+  font: 700 40px/1 "Noto Sans KR";
+  color: #222;
+  margin-bottom: 15px;
+}
+#social .inner .socialTexts p {
+  font: normal 30px/1 "Noto Sans KR";
+  color: #222;
+}
+#social .inner .socialTab {
+  width: 100%;
+}
+#social .inner .socialTab .titList {
+  width: 100%;
+  display: flex;
+  gap: 30px;
+  padding: 0px 0px 20px 30px;
+}
+#social .inner .socialTab .titList li {
+  position: relative;
+}
+#social .inner .socialTab .titList li a {
+  font: normal 20px/1 "Noto Sans KR";
+  color: #222;
+  transition: all 0.3s;
+  position: relative;
+}
+#social .inner .socialTab .titList li a::before {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  background-color: #ff7f00;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.3s;
+  transform: scale(0);
+  position: absolute;
+  top: 0px;
+  left: 110%;
+}
+#social .inner .socialTab .titList li a.on {
+  font-weight: bold;
+  color: #9f1758;
+}
+#social .inner .socialTab .titList li a.on::before {
   opacity: 1;
+  transform: scale(1);
+}
+#social .inner .socialContent {
+  width: 100%;
+}
+#social .inner .socialContent .tabList {
+  width: 100%;
+  height: 420px;
+  padding: 10px;
+  display: none;
+}
+#social .inner .socialContent .tabList .socialSlide {
+  width: 100%;
+  height: 100%;
+}
+#social .inner .socialContent .tabList .socialSlide .slideList .swiper-slide {
+  width: 100%;
+  height: 90%;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+  justify-content: flex-start;
+  cursor: pointer;
+}
+#social .inner .socialContent .tabList .socialSlide .slideList .swiper-slide .img {
+  width: 100%;
+  height: 200px;
+  background-color: #000;
+  margin-bottom: 20px;
+}
+#social .inner .socialContent .tabList .socialSlide .slideList .swiper-slide .img img {
+  width: 100%;
+}
+#social .inner .socialContent .tabList .socialSlide .slideList .swiper-slide .content {
+  width: 100%;
+  height: calc(100% - 220px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#social .inner .socialContent .tabList .socialSlide .slideList .swiper-slide .content h3 {
+  font: bold 22px/1.3 "Noto Sans KR";
+  color: #222;
+  text-align: left;
+}
+#social .inner .socialContent .tabList .socialSlide .slideList .swiper-slide .content p {
+  font: normal 16px/1 "Noto Sans KR";
+  color: #666;
+  text-align: right;
+}
+#social .inner .socialContent .tabList .socialSlide .swiper-pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background-color: #aaa;
+  opacity: 0.7;
+  margin: 0px 8px;
+}
+#social .inner .socialContent .tabList .socialSlide .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  width: 10px;
+  height: 10px;
+  background-color: #ff7f00;
+  opacity: 0.9;
 }
 
 /*# sourceMappingURL=style.css.map */
