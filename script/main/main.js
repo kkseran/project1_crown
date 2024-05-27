@@ -57,29 +57,21 @@ var swiper = new Swiper('.mainSlide', {
 });
 
 // #products
-
-$('.contentBox').click(function () {
-	if ($('.productBg').hasClass('on')) {
-		$('.productBg').removeClass('on');
-	}
-});
-
 let contentBox = document.querySelectorAll('.contentBox');
 let bg = document.querySelectorAll('.productBg');
 let productsTexts = document.querySelector('.productsTexts');
-let contentBoxOn = document.querySelectorAll('.contentBox.on');
+let contentBoxOn = document.querySelector('.contentBox.on');
 console.log(contentBoxOn);
 
 for (let i = 0; i < contentBox.length; i++) {
 	contentBox[i].addEventListener('click', (e) => {
+		document.querySelectorAll('.productBg.on').forEach(function (el) {
+			el.classList.remove('on');
+		});
 		for (let j = 0; j < contentBox.length; j++) {
 			contentBox[j].className = 'contentBox';
 		}
 		contentBox[i].className = 'contentBox on';
-		// contentBox[i].classList.toggle('on');
-		// if (bg.classList.contains('on')) {
-		// 	bg.classList.remove('on');
-		// }
 		bg[i + 1].classList.add('on');
 
 		let productsTitle = e.currentTarget.querySelector('.contentTitle').innerText;
@@ -115,3 +107,26 @@ var swiper = new Swiper('.socialSlide', {
 		clickable: true,
 	},
 });
+// youtube
+let vidList = document.querySelector('.slideList');
+let key = 'AIzaSyBUOCxCOPILmnFIM5-h5jjQhoqGKFnvFnU';
+let playListId = 'PLyMO-9HsK5ZFBY_oefb3G5mvDVLyC3yH7';
+let url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${playListId}&maxResults=6`;
+
+let img = document.querySelectorAll('#con03 .pic');
+console.log(img);
+let title = document.querySelectorAll('#con03 .content h3');
+
+let date = document.querySelectorAll('#con03 .date');
+
+fetch(url)
+	.then((data) => {
+		return data.json();
+	})
+	.then((json) => {
+		let items = json.items;
+		console.log(items);
+		items.map((el) => {
+			img.setAttribute('src', '${el.snippet.thumbnails.high.url}');
+		});
+	});

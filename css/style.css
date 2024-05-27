@@ -488,10 +488,6 @@ body {
   object-fit: cover;
 }
 
-#con02 {
-  background-color: lightblue;
-}
-
 #con03 {
   background-color: lemonchiffon;
 }
@@ -630,6 +626,16 @@ body {
   height: 10px;
   background-color: #ff7f00;
   opacity: 0.9;
+}
+#social .inner .socialContent .tabList#con02 .socialSlide .slideList .swiper-slide .img {
+  width: 100%;
+  height: 240px;
+  margin-bottom: 10px;
+  background-color: #666;
+}
+#social .inner .socialContent .tabList#con02 .socialSlide .slideList .swiper-slide .content {
+  width: 100%;
+  height: calc(100% - 240px - 10px);
 }
 
 /*# sourceMappingURL=style.css.map */

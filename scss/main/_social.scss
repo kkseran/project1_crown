@@ -21,11 +21,8 @@
 	}
 }
 
-#con01 {
-	// background-color: pink;
-}
 #con02 {
-	background-color: lightblue;
+	// background-color: lightblue;
 }
 #con03 {
 	background-color: lemonchiffon;
@@ -159,6 +156,24 @@
 								height: 10px;
 								background-color: #ff7f00;
 								opacity: 0.9;
+							}
+						}
+					}
+				}
+				&#con02 {
+					.socialSlide {
+						.slideList {
+							.swiper-slide {
+								.img {
+									width: 100%;
+									height: 240px;
+									margin-bottom: 10px;
+									background-color: #666;
+								}
+								.content {
+									width: 100%;
+									height: calc(100% - 240px - 10px);
+								}
 							}
 						}
 					}
