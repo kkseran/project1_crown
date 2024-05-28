@@ -27,7 +27,7 @@ body {
   position: fixed;
   top: 0px;
   left: 0px;
-  z-index: 10;
+  z-index: 3;
   transition: all 0.5s;
 }
 #header .inner {
@@ -42,11 +42,9 @@ body {
 #header .inner #logo {
   width: 150px;
   height: 35px;
-  z-index: 10;
 }
 #header .inner #menuWeb {
   width: 730px;
-  z-index: 10;
 }
 #header .inner #menuWeb > ul {
   display: flex;
@@ -65,11 +63,11 @@ body {
   height: 2px;
   background-color: #ff7f00;
   position: absolute;
-  z-index: 5;
+  z-index: 4;
   bottom: -1px;
   transition: all 0.5s;
 }
-#header .inner #menuWeb > ul > li:hover::after {
+#header .inner #menuWeb > ul > li:hover::after, #header .inner #menuWeb > ul > li.on::after {
   width: 100%;
 }
 #header .inner #menuWeb > ul > li > a {
@@ -79,7 +77,7 @@ body {
 }
 #header .inner #menuWeb > ul > li .subWeb {
   display: none;
-  transition: all 0.5s;
+  z-index: 100;
 }
 #header .inner #menuWeb > ul > li .subWeb li {
   width: 100%;
@@ -87,23 +85,23 @@ body {
   text-align: center;
 }
 #header .inner #menuWeb > ul > li .subWeb li a {
-  font: normal 14px/60px "Noto Sans KR";
+  font: normal 14px/55px "Noto Sans KR";
   position: relative;
 }
 #header .inner #menuWeb > ul > li .subWeb li a::before {
   content: "";
   display: block;
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   background-color: #ff7f00;
   border-radius: 50%;
   opacity: 0;
   transition: all 0.5s;
   transform: scale(0);
   position: absolute;
-  right: -15px;
-  top: -5px;
-  z-index: 10;
+  right: -13px;
+  top: -4px;
+  z-index: 3;
 }
 #header .inner #menuWeb > ul > li .subWeb li a:hover {
   color: #9f1758;
@@ -189,18 +187,23 @@ body {
   font-size: 50px;
   color: #333;
 }
-#header #gnbBg {
+#header.scroll {
+  background-color: #fff;
+}
+#header.scroll .inner #menuWeb > ul > li > a {
+  color: #222;
+  text-shadow: none;
+}
+
+#bgGnb {
   width: 100%;
-  height: 0px;
   background-color: #fff;
   position: absolute;
   top: 70px;
   left: 0px;
-  opacity: 0;
-  z-index: 9;
-  transition: all 0.5s;
+  display: none;
 }
-#header #gnbBg::before {
+#bgGnb::before {
   content: "";
   display: block;
   width: 100%;
@@ -209,14 +212,6 @@ body {
   position: absolute;
   top: 0px;
   left: 0px;
-  z-index: 10;
-}
-#header.scroll {
-  background-color: #fff;
-}
-#header.scroll .inner #menuWeb > ul > li > a {
-  color: #222;
-  text-shadow: none;
 }
 
 @media screen and (max-width: 800px) {
@@ -236,6 +231,7 @@ body {
 #slide {
   width: 100%;
   height: 90vh;
+  z-index: 1;
 }
 #slide .mainSlide {
   width: 100%;
@@ -282,7 +278,7 @@ body {
   position: absolute;
   right: 10px;
   bottom: 10px;
-  z-index: 10;
+  z-index: 2;
   width: 50px;
   height: 50px;
   display: flex;
@@ -293,7 +289,6 @@ body {
 #slide .mainSlide .autoplay-progress svg {
   --progress: 0;
   position: absolute;
-  z-index: 10;
   width: 100%;
   height: 100%;
   stroke-width: 4px;
