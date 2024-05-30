@@ -117,6 +117,10 @@ for (let i = 0; i < contentBox.length; i++) {
 	});
 }
 
+$('.contentBox.on').click(function () {
+	$('.contentBox').removeClass('on');
+});
+
 // #social
 // tab
 $('.socialTab>.titList>li>a')
@@ -146,12 +150,6 @@ let key = 'AIzaSyBUOCxCOPILmnFIM5-h5jjQhoqGKFnvFnU';
 let playListId = 'PLyMO-9HsK5ZFBY_oefb3G5mvDVLyC3yH7';
 let url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${playListId}&maxResults=6`;
 
-// let img = document.querySelectorAll('#con03 .pic').getAttribute('src');
-// console.log(img);
-// let title = document.querySelectorAll('#con03 .content h3');
-
-// let date = document.querySelectorAll('#con03 .date');
-
 fetch(url)
 	.then((data) => {
 		return data.json();
@@ -164,30 +162,46 @@ fetch(url)
 			let date = el.snippet.publishedAt;
 			date = date.split('T')[0];
 			result += `<li class="swiper-slide">
-			<a href=${el.snippet.resourceId.videoId} class='img'>
-				<img src="${el.snippet.thumbnails.medium.url}" alt="" />
-				</a>
-			<div class="content">
-				<h3>${el.snippet.title}</h3>
-				<p class="date">${date}</p>
-			</div>
+			<a href=${el.snippet.resourceId.videoId}>
+				<div class="img">
+					<img src="${el.snippet.thumbnails.medium.url}" alt="" />
+				</div>	
+				<div class="content">
+					<h3>${el.snippet.title}</h3>
+					<p class="date">${date}</p>
+				</div>
+			</a>
 		</li>`;
 			vidList.innerHTML = result;
 		});
 	});
 
-vidList.addEventListener('click', (e) => {
+$(vidList).click(function (e) {
 	e.preventDefault();
-	if (!e.target.closest('li')) return;
+	if (!e.target.closest('.swiper-slide')) return;
 	let vidId = e.target.closest('a').getAttribute('href');
-	console.log(vidId);
-	let pop = document.createElement('figure');
-	pop.classList.add('pop');
-	pop.innerHTML = `
-		<iframe src='https://www.youtube.com/embed/${vidId}'
-			frameborder='0' width='100%' height='100%'
-		></iframe>
-		<span class='btnClose'>CLOSE</span>
-		`;
-	vidList.append(pop);
+	$('#pop').addClass('on');
+	$('#pop').append(`<div class="imgWrap"></div>`);
+	$(
+		'#pop > .imgWrap'
+	).prepend(`<iframe class="video" src='https://www.youtube.com/embed/${vidId}?rel=0&playsinline=1&autoplay=1' frameborder='0' width='100%' height='100%' allowfullscreen></iframe>
+	`);
+});
+
+// social_popup
+$('.swiper-slide').click(function () {
+	$('#pop').addClass('on');
+	$('#pop').append(`<div class="imgWrap"></div>`);
+	let imgSrc = 'url(' + '.' + $(this).find('img').attr('src') + ')';
+	console.log(imgSrc);
+	$('#pop > .imgWrap').css('background-image', imgSrc);
+	$('#pop > .popTitle').append($(this).find('img').html());
+	$('#pop > .popTitle').text($(this).find('h3').text());
+	$('#pop > .popInfo').text($(this).find('.infotext').text());
+	$('#pop > .popDate').text($(this).find('.date').text());
+});
+$('#pop > .closeBtn').click(function (e) {
+	e.preventDefault();
+	$('#pop .imgWrap').remove();
+	$('#pop').removeClass('on');
 });

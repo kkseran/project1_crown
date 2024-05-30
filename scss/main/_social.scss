@@ -25,9 +25,44 @@
 	width: 100%;
 	.inner {
 		width: 1180px;
+		height: 630px;
 		margin: 0px auto;
 		position: relative;
-		// overflow: hidden;
+		#pop {
+			width: 100%;
+			height: 100%;
+			background-color: rgba($color: #000000, $alpha: 0.9);
+			position: absolute;
+			top: -110%;
+			left: 0%;
+			transition: top 1s;
+			z-index: 3;
+			.closeBtn {
+				position: absolute;
+				top: 30px;
+				right: 30px;
+				i {
+					@include closeBtn;
+				}
+			}
+			.imgWrap {
+				width: 400px;
+				height: 200px;
+				background-repeat: no-repeat;
+			}
+			.popTitle {
+				color: #fff;
+			}
+			.popInfo {
+				color: #fff;
+			}
+			.popDate {
+				color: #fff;
+			}
+			&.on {
+				top: 0%;
+			}
+		}
 		.moreBtn {
 			position: absolute;
 			top: 30px;
