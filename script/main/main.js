@@ -147,7 +147,7 @@ var swiper = new Swiper('.socialSlide', {
 // youtube
 let vidList = document.querySelector('#con03>.socialSlide>.slideList');
 let key = 'AIzaSyBUOCxCOPILmnFIM5-h5jjQhoqGKFnvFnU';
-let playListId = 'PLyMO-9HsK5ZFBY_oefb3G5mvDVLyC3yH7';
+let playListId = 'PLncUEVpPoLRkwpBZXXFrm6U7nd0JADKsF';
 let url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${playListId}&maxResults=6`;
 
 fetch(url)
@@ -164,11 +164,12 @@ fetch(url)
 			result += `<li class="swiper-slide">
 			<a href=${el.snippet.resourceId.videoId}>
 				<div class="img">
-					<img src="${el.snippet.thumbnails.medium.url}" alt="" />
+					<img src="${el.snippet.thumbnails.high.url}" alt="${el.snippet.title}" />
 				</div>	
 				<div class="content">
 					<h3>${el.snippet.title}</h3>
 					<p class="date">${date}</p>
+					<p class="infotext">${el.snippet.description}</p>
 				</div>
 			</a>
 		</li>`;
@@ -176,29 +177,43 @@ fetch(url)
 		});
 	});
 
-$(vidList).click(function (e) {
+// $(vidList).click(function (e) {
+// 	e.preventDefault();
+// 	if (!e.target.closest('.swiper-slide')) return;
+// 	let vidId = e.target.closest('a').getAttribute('href');
+// 	$('#pop').addClass('on');
+// 	$('#pop .popInfo').before(`<div class="imgWrap"></div>`);
+// 	$(
+// 		'#pop > .imgWrap'
+// 	).prepend(`<iframe class="video" src='https://www.youtube.com/embed/${vidId}?rel=0&playsinline=1&autoplay=1' frameborder='0' width='100%' height='100%' allowfullscreen></iframe>
+// 	`);
+// });
+
+$(vidList).on('click', '.swiper-slide', function (e) {
 	e.preventDefault();
 	if (!e.target.closest('.swiper-slide')) return;
 	let vidId = e.target.closest('a').getAttribute('href');
 	$('#pop').addClass('on');
-	$('#pop').append(`<div class="imgWrap"></div>`);
+	$('#pop .popInfo').before(`<div class="imgWrap"></div>`);
 	$(
 		'#pop > .imgWrap'
 	).prepend(`<iframe class="video" src='https://www.youtube.com/embed/${vidId}?rel=0&playsinline=1&autoplay=1' frameborder='0' width='100%' height='100%' allowfullscreen></iframe>
 	`);
+	$('#pop > .popTitle').text($(this).find('h3').text());
+	$('#pop > .popInfo').html($(this).find('.infotext').html());
+	$('#pop > .popDate').text($(this).find('.date').text());
 });
 
 // social_popup
 $('.swiper-slide').click(function () {
 	$('#pop').addClass('on');
-	$('#pop').append(`<div class="imgWrap"></div>`);
+	$('#pop .popInfo').before(`<div class="imgWrap"></div>`);
 	let imgSrc = 'url(' + '.' + $(this).find('img').attr('src') + ')';
-	console.log(imgSrc);
 	$('#pop > .imgWrap').css('background-image', imgSrc);
-	$('#pop > .popTitle').append($(this).find('img').html());
 	$('#pop > .popTitle').text($(this).find('h3').text());
-	$('#pop > .popInfo').text($(this).find('.infotext').text());
+	$('#pop > .popInfo').html($(this).find('.infotext').html());
 	$('#pop > .popDate').text($(this).find('.date').text());
+	$('#pop > .popDate').after($(this).find('.blank'));
 });
 $('#pop > .closeBtn').click(function (e) {
 	e.preventDefault();

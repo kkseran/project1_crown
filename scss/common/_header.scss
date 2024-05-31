@@ -7,7 +7,7 @@ body {
 	position: fixed;
 	top: 0px;
 	left: 0px;
-	z-index: 3;
+	z-index: 5;
 	transition: all 0.5s;
 	.inner {
 		width: 1180px;
@@ -205,19 +205,19 @@ body {
 	}
 }
 
-@media screen and (max-width: 800px) {
-	#header {
-		.inner {
-			width: 100%;
-			#menuWeb {
-				display: none;
-			}
-		}
-		.btnCall {
-			display: block;
-		}
-		#menuMo {
-			display: block;
-		}
-	}
-}
+// @media screen and (max-width: 800px) {
+// 	#header {
+// 		.inner {
+// 			width: 100%;
+// 			#menuWeb {
+// 				display: none;
+// 			}
+// 		}
+// 		.btnCall {
+// 			display: block;
+// 		}
+// 		#menuMo {
+// 			display: block;
+// 		}
+// 	}
+// }
