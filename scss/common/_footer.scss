@@ -1,0 +1,202 @@
+#footer {
+	width: 100%;
+	margin-top: 150px;
+	min-height: 200px;
+	background-color: #222;
+	overflow: hidden;
+	* {
+		color: #fff;
+	}
+	.inner {
+		width: 1180px;
+		margin: 0px auto;
+		padding: 40px 30px;
+		display: flex;
+		flex-direction: column;
+		gap: 35px;
+		position: relative;
+		z-index: 1;
+		.top {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			.footerMenu {
+				ul {
+					display: flex;
+					li {
+						padding: 0px 15px;
+						border-right: 2px solid #999;
+						&:nth-last-of-type(1) {
+							border: none;
+							padding-right: 0px;
+						}
+						a {
+							font: 400 15px/1 $mainFont;
+							color: #ddd;
+						}
+						&.accent {
+							a {
+								font-weight: 500;
+								color: #ff7f00;
+							}
+						}
+					}
+				}
+			}
+		}
+		.adress {
+			p {
+				&:nth-of-type(1) {
+					margin-bottom: 10px;
+				}
+				span {
+					font: 500 15px/1.5 $mainFont;
+					color: #ddd;
+					padding-right: 30px;
+					strong {
+						font-weight: 600;
+						padding-right: 10px;
+					}
+					em {
+						font-weight: normal;
+						font-style: normal;
+						color: #999;
+						padding-right: 8px;
+					}
+				}
+			}
+		}
+		.bottom {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			.copy {
+				p {
+					font: normal 15px/1 $mainFont;
+					color: #999;
+				}
+			}
+			.link {
+				display: flex;
+				align-items: center;
+				gap: 30px;
+				.sns {
+					display: flex;
+					gap: 10px;
+					a {
+						font-size: 0;
+						line-height: 0;
+						text-indent: -200%;
+						width: 35px;
+						height: 35px;
+						&.facebook {
+							background-image: url(../img/footer/facebook.png);
+							background-position: center;
+							background-size: contain;
+						}
+						&.instagram {
+							background-image: url(../img/footer/instagram.png);
+							background-position: center;
+							background-size: contain;
+						}
+						&.blog {
+							background-image: url(../img/footer/blog.png);
+							background-position: center;
+							background-size: contain;
+						}
+						&.youtube {
+							background-image: url(../img/footer/youtube.png);
+							background-position: center;
+							background-size: contain;
+						}
+					}
+				}
+				#familySite {
+					width: 150px;
+					height: 35px;
+					border: 1px solid #888;
+					cursor: pointer;
+					position: relative;
+					.selected {
+						width: 100%;
+						height: 100%;
+						padding: 0px 10px;
+						font: 400 14px/35px $mainFont;
+						letter-spacing: 1px;
+						color: #bbb;
+						background-color: #222;
+						transition: all 1s;
+						position: relative;
+						z-index: 3;
+						&::after {
+							content: '';
+							display: block;
+							width: 8px;
+							height: 8px;
+							border-top: 2px solid #bbb;
+							border-left: 2px solid #bbb;
+							border-radius: 2px;
+							position: absolute;
+							top: 50%;
+							right: 10px;
+							transform: translateY(-50%) rotate(45deg);
+							transition: all 0.5s;
+						}
+					}
+					.options {
+						// display: none;
+						opacity: 0;
+						pointer-events: none;
+						width: 150px;
+						background-color: rgba($color: #fff, $alpha: 0.1);
+						position: absolute;
+						left: -1px;
+						top: 0px;
+						border: 1px solid #bbb;
+						border-bottom: none;
+						transition: opacity 0.3s, top 1s;
+						z-index: 2;
+						li {
+							border-bottom: 1px dotted #bbb;
+							&:last-of-type {
+								border-bottom: none;
+							}
+							a {
+								display: block;
+								width: 100%;
+								height: 30px;
+								padding: 0px 10px;
+								font: normal 13px/30px $mainFont;
+								letter-spacing: 1px;
+								color: #eee;
+								transition: all 0.3s;
+							}
+							&:hover {
+								a {
+									background-color: rgba($color: #000, $alpha: 0.9);
+									color: #ff7f00;
+								}
+							}
+						}
+					}
+					&.on {
+						border-color: #bbb;
+						.selected {
+							color: #ff7f00;
+							&::after {
+								border-color: #ff7f00;
+								transform: translateY(-50%) rotate(225deg);
+							}
+						}
+						.options {
+							opacity: 1;
+							top: -125px;
+							pointer-events: auto;
+							transition: top 1s, opacity 0.3s 0.3s;
+						}
+					}
+				}
+			}
+		}
+	}
+}

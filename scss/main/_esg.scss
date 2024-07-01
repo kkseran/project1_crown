@@ -1,0 +1,110 @@
+#esg {
+	width: 100%;
+	overflow: hidden;
+	transform: translateY(20%);
+	opacity: 0;
+	transition: all 1s;
+	&.scroll {
+		opacity: 1;
+		transform: translateY(0%);
+		.inner {
+			.contentWrap {
+				opacity: 1;
+				transform: scale(1);
+			}
+		}
+	}
+	.inner {
+		width: 1180px;
+		margin: 0px auto;
+		position: relative;
+		.moreBtn {
+			position: absolute;
+			top: 30px;
+			right: 30px;
+			i {
+				@include moreBtn;
+			}
+		}
+		.esgText {
+			width: 100%;
+			padding: 80px 30px 40px;
+			h2 {
+				font: 700 40px/1 $mainFont;
+				text-align: center;
+				color: #222;
+				margin-bottom: 15px;
+			}
+		}
+		.contentWrap {
+			width: 100%;
+			display: flex;
+			gap: 10px;
+			overflow: hidden;
+			opacity: 0;
+			transform: scale(0.7);
+			transition: all 0.8s 0.5s;
+			article {
+				flex: 1;
+				height: 600px;
+				padding: 0px 30px;
+				transition: all 1s;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				position: relative;
+				cursor: pointer;
+				.esgTitle {
+					h3 {
+						font: 700 55px/1 $mainFont;
+						color: #fff;
+						margin-bottom: 30px;
+					}
+					span {
+						font: 600 30px/1 $mainFont;
+						color: #fff;
+					}
+				}
+				.esgInfo {
+					font: normal 18px/1.5 $mainFont;
+					text-wrap: nowrap;
+					color: #fff;
+					position: absolute;
+					bottom: 0px;
+					left: 30px;
+					opacity: 0;
+					transition: opacity 0.5s, bottom 1s;
+				}
+				&#e {
+					background-image: url(../img/main/esg/E.png);
+					background-repeat: no-repeat;
+				}
+				&#s {
+					background-image: url(../img/main/esg/S복사.png);
+					background-repeat: no-repeat;
+				}
+				&#g {
+					background-image: url(../img/main/esg/G복사2.png);
+					background-repeat: no-repeat;
+				}
+				&.on {
+					flex: 5;
+					.esgInfo {
+						opacity: 1;
+						bottom: 200px;
+						transition: opacity 1s 0.5s, bottom 1s;
+					}
+					&#e {
+						background-image: url(../img/main/esg/E_hover.png);
+					}
+					&#s {
+						background-image: url(../img/main/esg/S_hover.png);
+					}
+					&#g {
+						background-image: url(../img/main/esg/G_hover.png);
+					}
+				}
+			}
+		}
+	}
+}

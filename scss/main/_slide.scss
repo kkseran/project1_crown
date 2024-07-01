@@ -1,11 +1,15 @@
 #slide {
 	width: 100%;
-	height: 90vh;
-	z-index: 1;
+	height: 100vh;
+	overflow: hidden;
+	position: relative;
+	z-index: 3;
 	.mainSlide {
 		width: 100%;
 		height: 100%;
 		.swiper-wrapper {
+			width: 100%;
+			height: 100%;
 			.swiper-slide {
 				.textWrap {
 					width: 1180px;
