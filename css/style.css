@@ -815,7 +815,6 @@ a {
   }
   #products .inner {
     width: 100%;
-    height: calc(100vh - 80px);
   }
   #products .inner .moreBtn i {
     font-size: 5.5vw;
@@ -837,7 +836,7 @@ a {
     font: normal 5.5vw/1 "Noto Sans KR";
   }
   #products .inner .productsContent .productsTexts .productsInfoTxt {
-    font: normal 4vw/1.5 "Noto Sans KR";
+    font: normal 4vw/1.2 "Noto Sans KR";
   }
   #products .inner .productsContent .productImg {
     top: -5%;
@@ -1260,7 +1259,6 @@ a {
 @media screen and (max-width: 800px) {
   #social .inner {
     width: 100%;
-    height: calc(100vh - 80px);
   }
   #social .inner #pop {
     padding: 60px 20px 30px;
@@ -1437,7 +1435,6 @@ a {
 @media screen and (max-width: 800px) {
   #esg .inner {
     width: 100%;
-    height: calc(100vh - 80px);
   }
   #esg .inner .moreBtn i {
     font-size: 5.5vw;

@@ -113,7 +113,6 @@
 	#esg {
 		.inner {
 			width: 100%;
-			height: calc(100vh - 80px);
 			.moreBtn {
 				i {
 					@include moreBtn_mo;

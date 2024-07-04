@@ -215,7 +215,6 @@
 		margin-bottom: 20px;
 		.inner {
 			width: 100%;
-			height: calc(100vh - 80px);
 			.moreBtn {
 				i {
 					@include moreBtn_mo;
@@ -237,7 +236,7 @@
 						font: normal 5.5vw/1 $mainFont;
 					}
 					.productsInfoTxt {
-						font: normal 4vw/1.5 $mainFont;
+						font: normal 4vw/1.2 $mainFont;
 					}
 				}
 				.productImg {
