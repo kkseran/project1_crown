@@ -1482,7 +1482,7 @@ main {
   position: relative;
   overflow: hidden;
 }
-main #clickScroll {
+main #clickScrollWeb {
   width: 150px;
   overflow: hidden;
   position: fixed;
@@ -1493,19 +1493,19 @@ main #clickScroll {
   opacity: 0;
   pointer-events: none;
 }
-main #clickScroll .map {
+main #clickScrollWeb .map {
   width: 100%;
 }
-main #clickScroll .map ul li {
+main #clickScrollWeb .map ul li {
   padding: 10px 0px;
 }
-main #clickScroll .map ul li a {
+main #clickScrollWeb .map ul li a {
   font: bold 18px/1 "Noto Sans KR";
   color: #bbb;
   position: relative;
   transition: all 0.5s;
 }
-main #clickScroll .map ul li a::after {
+main #clickScrollWeb .map ul li a::after {
   content: "";
   display: block;
   width: 100px;
@@ -1517,21 +1517,58 @@ main #clickScroll .map ul li a::after {
   left: calc(100% + 3px);
   transition: all 0.5s;
 }
-main #clickScroll .map ul li.on a {
+main #clickScrollWeb .map ul li.on a {
   color: #9f1758;
   left: 30px;
 }
-main #clickScroll .map ul li.on a::after {
+main #clickScrollWeb .map ul li.on a::after {
   background-color: #9f1758;
 }
-main #clickScroll.on {
+main #clickScrollWeb.on {
+  opacity: 1;
+  pointer-events: auto;
+}
+main #clickScrollMo {
+  width: 45px;
+  height: 45px;
+  background-color: rgba(238, 238, 238, 0.8);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 20;
+  transition: all 0.8s;
+  opacity: 0;
+  pointer-events: none;
+  display: none;
+}
+main #clickScrollMo .goToTop {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+main #clickScrollMo .goToTop span {
+  text-indent: -9999px;
+  opacity: 0;
+}
+main #clickScrollMo .goToTop i {
+  font-size: 24px;
+  color: #9f1758;
+}
+main #clickScrollMo.on {
   opacity: 1;
   pointer-events: auto;
 }
 
 @media screen and (max-width: 800px) {
-  main #clickScroll {
+  main #clickScrollWeb {
     display: none;
+  }
+  main #clickScrollMo {
+    display: block;
   }
 }
 

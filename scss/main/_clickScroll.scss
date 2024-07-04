@@ -3,7 +3,7 @@ main {
 	width: 100%;
 	position: relative;
 	overflow: hidden;
-	#clickScroll {
+	#clickScrollWeb {
 		width: 150px;
 		overflow: hidden;
 		position: fixed;
@@ -53,12 +53,49 @@ main {
 			pointer-events: auto;
 		}
 	}
+	#clickScrollMo {
+		width: 45px;
+		height: 45px;
+		background-color: rgba($color: #eee, $alpha: 0.8);
+		box-shadow: 1px 1px 5px rgba($color: #000000, $alpha: 0.1);
+		border-radius: 50%;
+		position: fixed;
+		bottom: 20px;
+		right: 20px;
+		z-index: 20;
+		transition: all 0.8s;
+		opacity: 0;
+		pointer-events: none;
+		display: none;
+		.goToTop {
+			display: flex;
+			width: 100%;
+			height: 100%;
+			align-items: center;
+			justify-content: center;
+			span {
+				text-indent: -9999px;
+				opacity: 0;
+			}
+			i {
+				font-size: 24px;
+				color: #9f1758;
+			}
+		}
+		&.on {
+			opacity: 1;
+			pointer-events: auto;
+		}
+	}
 }
 
 @media screen and (max-width: 800px) {
 	main {
-		#clickScroll {
+		#clickScrollWeb {
 			display: none;
+		}
+		#clickScrollMo {
+			display: block;
 		}
 	}
 }

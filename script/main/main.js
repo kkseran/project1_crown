@@ -314,9 +314,9 @@ $('#familySite .selected').click(function () {
 	}, footerDelay);
 });
 
-// scroll
-let $clickScroll = $('#clickScroll');
-let $clickScroll_lis = $('#clickScroll .map ul li');
+// scroll_web
+let $clickScroll = $('#clickScrollWeb');
+let $clickScroll_lis = $('#clickScrollWeb .map ul li');
 let $sections = $('section');
 let exposurePercentage = 30;
 $(window).scroll(function () {
@@ -348,8 +348,6 @@ $($clickScroll_lis).click(function (event) {
 	if (index >= 0 && index < $sections.length) {
 		let $targetSection = $($sections[index]);
 		let targetTop = $targetSection.offset().top;
-		console.log($targetSection);
-		console.log(targetTop);
 		$('html, body').animate(
 			{
 				scrollTop: targetTop - 150,
@@ -357,4 +355,23 @@ $($clickScroll_lis).click(function (event) {
 			500
 		);
 	}
+});
+
+// scroll_mo
+let $clickScrollMo = $('#clickScrollMo');
+$(window).scroll(function () {
+	if ($(document).scrollTop() > offset.top) {
+		$clickScrollMo.addClass('on');
+	} else {
+		$clickScrollMo.removeClass('on');
+	}
+});
+$($clickScrollMo).click(function (event) {
+	event.preventDefault();
+	$('html, body').animate(
+		{
+			scrollTop: 0,
+		},
+		500
+	);
 });
