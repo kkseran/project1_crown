@@ -6,6 +6,10 @@
 		color: #9f1758;
 	}
 }
+@mixin moreBtn_mo {
+	font-size: 5.5vw;
+	color: #ff7f00;
+}
 
 @mixin closeBtn {
 	font-size: 40px;
@@ -15,4 +19,9 @@
 	&:hover {
 		color: #9f1758;
 	}
+}
+@mixin closeBtn_mo {
+	font-size: 6.5vw;
+	color: #ff7f00;
+	transform: rotate(45deg);
 }

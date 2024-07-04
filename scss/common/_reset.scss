@@ -2,6 +2,10 @@
 	margin: 0px;
 	padding: 0px;
 	box-sizing: border-box;
+	&::selection {
+		background-color: #ff7f00;
+		color: #fff;
+	}
 }
 ul {
 	list-style: none;
@@ -9,3 +13,7 @@ ul {
 a {
 	text-decoration: none;
 }
+// ::selection {
+// 	background-color: #ff7f00;
+// 	color: #fff;
+// }

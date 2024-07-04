@@ -108,3 +108,53 @@
 		}
 	}
 }
+
+@media screen and (max-width: 800px) {
+	#esg {
+		.inner {
+			width: 100%;
+			.moreBtn {
+				i {
+					@include moreBtn_mo;
+				}
+			}
+			.esgText {
+				padding: 80px 30px 20px;
+				h2 {
+					font: 700 6vw/1.5 $mainFont;
+				}
+			}
+			.contentWrap {
+				min-height: 700px;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				article {
+					width: 100%;
+					background-position: center;
+					background-size: cover;
+					.esgTitle {
+						h3 {
+							font: 700 10vw/1 $mainFont;
+						}
+						span {
+							font: 600 7vw/1 $mainFont;
+						}
+					}
+					.esgInfo {
+						padding: 0px 30px;
+						font: normal 3.5vw/1.5 $mainFont;
+						text-wrap: wrap;
+						left: 0px;
+						bottom: -20px;
+					}
+					&.on {
+						.esgInfo {
+							bottom: 60px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
