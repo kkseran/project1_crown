@@ -215,7 +215,7 @@
 		margin-bottom: 20px;
 		.inner {
 			width: 100%;
-			min-height: 830px;
+			height: calc(100vh - 80px);
 			.moreBtn {
 				i {
 					@include moreBtn_mo;

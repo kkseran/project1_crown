@@ -815,7 +815,7 @@ a {
   }
   #products .inner {
     width: 100%;
-    min-height: 830px;
+    height: calc(100vh - 80px);
   }
   #products .inner .moreBtn i {
     font-size: 5.5vw;
@@ -1260,6 +1260,7 @@ a {
 @media screen and (max-width: 800px) {
   #social .inner {
     width: 100%;
+    height: calc(100vh - 80px);
   }
   #social .inner #pop {
     padding: 60px 20px 30px;
@@ -1436,6 +1437,7 @@ a {
 @media screen and (max-width: 800px) {
   #esg .inner {
     width: 100%;
+    height: calc(100vh - 80px);
   }
   #esg .inner .moreBtn i {
     font-size: 5.5vw;
@@ -1448,7 +1450,7 @@ a {
     font: 700 6vw/1.5 "Noto Sans KR";
   }
   #esg .inner .contentWrap {
-    min-height: 700px;
+    min-height: 650px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -1469,10 +1471,10 @@ a {
     font: normal 3.5vw/1.5 "Noto Sans KR";
     text-wrap: wrap;
     left: 0px;
-    bottom: -20px;
+    bottom: -40px;
   }
   #esg .inner .contentWrap article.on .esgInfo {
-    bottom: 60px;
+    bottom: 50px;
   }
 }
 main {

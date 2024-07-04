@@ -113,6 +113,7 @@
 	#esg {
 		.inner {
 			width: 100%;
+			height: calc(100vh - 80px);
 			.moreBtn {
 				i {
 					@include moreBtn_mo;
@@ -125,7 +126,7 @@
 				}
 			}
 			.contentWrap {
-				min-height: 700px;
+				min-height: 650px;
 				flex-direction: column;
 				align-items: center;
 				justify-content: center;
@@ -146,11 +147,11 @@
 						font: normal 3.5vw/1.5 $mainFont;
 						text-wrap: wrap;
 						left: 0px;
-						bottom: -20px;
+						bottom: -40px;
 					}
 					&.on {
 						.esgInfo {
-							bottom: 60px;
+							bottom: 50px;
 						}
 					}
 				}
